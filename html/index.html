@@ -6,9 +6,12 @@
   <body onload="brython()">
     <p id="hoge"></p>
     <script type="text/python">
-      from browser import document
+      from browser import document, ajax
       
-      document['hoge'] <= "test"
+      req = ajax.Ajax()
+      req.open("GET", "https://randomuser.me/api/", False)
+      req.send()
+      document['hoge'] <= req.text
     </script>
   </body>
 </html>
