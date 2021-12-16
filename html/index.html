@@ -7,11 +7,13 @@
     <p id="hoge"></p>
     <script type="text/python">
       from browser import document, ajax
+      import json
       
       req = ajax.Ajax()
       req.open("GET", "https://randomuser.me/api/", False)
       req.send()
-      document['hoge'] <= req.text
+      data = json.loads(req.text)["results"][0]
+      document['hoge'] <= data["name"]["first"]
     </script>
   </body>
 </html>
