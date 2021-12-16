@@ -4,16 +4,17 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10/brython_stdlib.js"></script>
   </head>
   <body onload="brython()">
-    <p id="hoge"></p>
+    <div id="main"></div>
     <script type="text/python">
-      from browser import document, ajax
+      from browser import document, ajax, html
       import json
       
       req = ajax.Ajax()
       req.open("GET", "https://randomuser.me/api/", False)
       req.send()
       data = json.loads(req.text)["results"][0]
-      document['hoge'] <= data["name"]["first"]
+      document['main'] <= html.H1(data["name"]["first"])
+      document['main'] <= html.IMG(src=data["picture"]["medium"], alt="image")
     </script>
   </body>
 </html>
