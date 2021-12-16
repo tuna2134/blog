@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10/brython_stdlib.js"></script>
+  </head>
+  <body onload="brython()">
+    <p id="hoge"></p>
+    <script type="text/python">
+      from browser import document
+      
+      document['hoge'] = "test"
+    </script>
+  </body>
+</html>
