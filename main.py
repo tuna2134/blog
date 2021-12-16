@@ -4,7 +4,7 @@ from jinja2 import Environment, FileSystemLoader
 
 app = Sanic("main")
 
-env = Environment(loader=FileSystemLoader('./templates/', encoding='utf8'), enable_async=True)
+env = Environment(loader=FileSystemLoader('./html/', encoding='utf8'), enable_async=True)
 
 async def template(tpl, **kwargs):
     template = env.get_template(tpl)
