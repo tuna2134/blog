@@ -17,3 +17,5 @@ async def main(request):
         return await template(path)
     else:
         return await file(path)
+
+app.run(host = "0.0.0.0", port = 8000)
